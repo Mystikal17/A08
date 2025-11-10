@@ -1,93 +1,219 @@
-/* custom property */
-:root {
-	--accent-color: #800000;  /* could also be coded #800 */
-	--gradient-color: #f6bb73;
-}
-
-/* reset */
+/* ===== Reset ===== */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* default styles */
+html {
+    background-color: white;
+}
+
+/* ===== Base ===== */
 body {
-	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-	width: 80%;
-	margin: auto;
-	border: 2px solid var(--accent-color);
-}
-a:hover, a:focus{
-	font-style: italic;
-	color: var(--accent-color);
-}
-h1, h2, h3, p, ul {
-	padding: .5em 0;
-}
-h1 {
-	font-size: 150%;
-}
-h2 {
-	font-size: 130%;
-	color: var(--accent-color);
-}
-h3 {
-	font-size: 105%;
-}
-ul {
-	margin-left: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    max-width: 1024px;
+    margin: 0 auto;
+    border: 3px solid #931420;
+    background-color: #fffded;
+    font-size: calc(0.9rem + 0.2vw);
+    line-height: 1.5;
 }
 
-/* the styles for the header */
+a:focus, a:hover {
+    font-style: italic;
+}
+
+/* ===== Header ===== */
 header {
-	border-bottom: 2px solid var(--accent-color);
-	background-image: linear-gradient(
-	    30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%);
-	& h2 {
-		font-size: 175%;
-		padding: .5em 0 0 0;
-	}
-	& h3 {
-		font-size: 130%;
-		font-style: italic;
-		padding-bottom: 1em;
-	}
-	& img {
-		float: left;
-		margin: .75em 1em;
-	}
+    padding: 1.5em 0 2em 0;
+    border-bottom: 3px solid #931420;
+    background-image: linear-gradient(
+            30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%
+    );
+    line-height: 1.2;
 }
 
-/* the styles for the main content */
+header img {
+    float: left;
+    margin-right: 1em;
+    width: 100%;
+    min-width: 40px;
+    max-width: 80px;
+}
+
+header h2 {
+    font-size: 175%;
+    color: #800000;
+}
+
+header h3 {
+    font-size: 130%;
+    font-style: italic;
+}
+
+.shadow {
+    text-shadow: 2px 2px 2px #800000;
+}
+
+/* ===== Layout ===== */
 main {
-	padding: 0 1em 1em;
-	& h1 {
-		border-top: 2px solid var(--accent-color);
-		border-bottom: 2px solid var(--accent-color);
-	}
-	& blockquote {
-		font-style: italic;
-		padding-left: 1em;
-	}
-	& img {
-		border: 4px double var(--accent-color);
-		border-radius: 10px;
-	}
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5em;
+    padding: 1em;
 }
 
-/* the styles for the footer */
+aside {
+    flex: 0 0 25%;
+    order: 1;
+    padding-right: 1em;
+    border-right: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+aside h2 {
+    color: #800000;
+    font-size: 130%;
+    padding-bottom: 0.5em;
+}
+
+aside h3 {
+    font-size: 105%;
+    padding-bottom: 0.25em;
+}
+
+aside img {
+    display: block;
+    width: 100%;
+    max-width: 75px;
+    min-width: 40px;
+    margin-bottom: 1em;
+}
+
+section {
+    flex: 1 1 75%;
+    order: 2;
+    padding-left: 1em;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+section h1 {
+    font-size: 150%;
+    padding-top: .5em;
+    padding-bottom: .25em;
+}
+
+section h2 {
+    color: #800000;
+    font-size: 130%;
+    padding: .5em 0 .25em 0;
+}
+
+section h3 {
+    font-size: 105%;
+    padding-bottom: .25em;
+}
+
+section p {
+    padding-bottom: .5em;
+}
+
+section blockquote {
+    padding: 0 2em;
+    font-style: italic;
+}
+
+section ul {
+    padding-left: 1.25em;
+}
+
+section li {
+    padding-bottom: .35em;
+}
+
+/* ===== Featured Speaker ===== */
+.featured {
+    border-top: 3px solid #931420;
+    border-bottom: 3px solid #931420;
+    padding: 1em 0;
+    margin-top: 1em;
+    overflow: auto;
+}
+
+.featured img {
+    width: 100%;
+    min-width: 100px;
+    max-width: 250px;
+    float: right;
+    margin: 0 0 1em 1em;
+}
+
+.featured h2 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.featured p {
+    margin-bottom: 0.75em;
+}
+
+/* ===== Speaker Page ===== */
+.speaker {
+    padding: 1em 1.5em;
+}
+
+.speaker h1 {
+    color: #931420; /* Accent color */
+}
+
+.speaker h2 {
+    color: black;
+}
+
+.speaker p {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.speaker img {
+    float: right;
+    margin: 0 0 1em 1em;
+    width: 100%;
+    min-width: 100px;
+    max-width: 250px;
+}
+
+/* ===== Footer ===== */
 footer {
-	background-color: var(--accent-color);
-	& p {
-		text-align: center;
-		color: white;
-		padding: 1em 0;
-	}
+    background-color: #931420;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
 }
 
-/* CSS class */
-.large {
-	font-size: 125%;
+/* ===== Responsive layout ===== */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    section {
+        padding-left: 0;
+    }
+
+    section img, .speaker img {
+        float: none;
+        max-width: 100%;
+        margin: 0 0 1em 0;
+    }
 }
